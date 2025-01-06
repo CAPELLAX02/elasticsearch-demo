@@ -2,5 +2,13 @@ spring:
   application:
     name: elasticsearch-demo
 
+  elasticsearch:
+    uris: http://localhost:9200
+    connection-timeout: 10s
+    socket-timeout: 30s
+
+    # No need for username and password since in docker-compose.yml,
+    # the Elasticsearch container configurations contain "xpack.security.enabled=false".
+
 server:
   port: 8080
